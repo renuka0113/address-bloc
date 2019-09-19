@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const now=new Date();
+//const now=new Date();
 
 module.exports = class MenuController {
   constructor(){
@@ -10,7 +10,8 @@ module.exports = class MenuController {
         message: "Please choose from an option below: ",
         choices: [
           "Add new contact",
-          "Exit"
+          "Exit",
+          "Get current date and time"
         ]
       }
     ];
@@ -51,6 +52,7 @@ clear(){
   }
 
   getCurrentDate(){
+    const now=new Date();
     console.log(now);
     this.main();
   };
