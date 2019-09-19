@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const now=new Date();
 
 module.exports = class MenuController {
   constructor(){
@@ -17,7 +18,7 @@ module.exports = class MenuController {
   }//constructor close
 
   main(){
-  //console.log('hello from main');
+
   console.log(`Welcome to AddressBloc!`);
     inquirer.prompt(this.mainMenuQuestions).then((response) => {
       switch(response.mainMenuChoice){
@@ -26,6 +27,8 @@ module.exports = class MenuController {
           break;
         case "Exit":
           this.exit();
+        case "Get current date and time":
+          this.getCurrentDate();
         default:
           console.log("Invalid input");
           this.main();
@@ -46,6 +49,11 @@ clear(){
     console.log('addContact called');
     this.main();
   }
+
+  getCurrentDate(){
+    console.log(now);
+    this.main();
+  };
 
   exit(){
     console.log("Thanks for using AddressBloc!");
