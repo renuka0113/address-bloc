@@ -56,5 +56,8 @@ clear(){
     //method definition
     return this.contacts.length;
   }
-
+  remindMe(){
+    const myString="Learning is a life-long pursuit";
+    return myString;
+  }
 }// close class
