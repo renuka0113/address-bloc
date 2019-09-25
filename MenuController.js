@@ -28,8 +28,10 @@ module.exports = class MenuController {
           break;
         case "Exit":
           this.exit();
+          break;
         case "Get current date and time":
           this.getCurrentDate();
+          break;
         default:
           console.log("Invalid input");
           this.main();
