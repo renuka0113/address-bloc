@@ -52,4 +52,9 @@ clear(){
     process.exit();
   }
 
+  getContactCount(){
+    //method definition
+    return this.contacts.length;
+  }
+
 }// close class
