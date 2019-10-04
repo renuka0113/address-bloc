@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const ContactController = require("./ContactController");
 
 module.exports = class MenuController {
   constructor(){
@@ -13,7 +14,8 @@ module.exports = class MenuController {
         ]
       }
     ];
-    this.contacts = [];
+    //this.contacts = [];
+     this.book = new ContactController(); //reference to instance of ContactController
   }//constructor close
 
   main(){
