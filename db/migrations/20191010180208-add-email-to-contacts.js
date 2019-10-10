@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  up: function (queryInterface, Sequelize) => {
+  up: function (queryInterface, Sequelize) {
   return queryInterface.addColumn(
     'Contacts',
     'email',
@@ -9,7 +9,7 @@ module.exports = {
    )
   },
 
-  down: (queryInterface, Sequelize) => {
+  down: function (queryInterface, Sequelize) {
   return queryInterface.removeColumn(
     'Contacts',
     'email'
