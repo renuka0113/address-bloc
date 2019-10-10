@@ -5,7 +5,11 @@ var path      = require('path');
 var Sequelize = require('sequelize');
 var basename  = path.basename(__filename);
 var env       = process.env.NODE_ENV || 'development';
-var config    = require(__dirname + '/..\config\config.json')[env];
+//var config    = require(__dirname + '/..\config\config.json')[env];
+//var config    =require(path.resolve('..', 'config', 'config.json'));
+//var config =require(__dirname+path.resolve('..', 'config', 'config.json'));
+var config =require('../config/config.json')[env];
+console.log("SEQUELIZE CONFIG:", config);
 var db        = {};
 
 if (config.use_env_variable) {
