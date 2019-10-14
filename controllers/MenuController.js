@@ -47,7 +47,7 @@ clear(){
     this.clear();
     //console.log('addContact called');
     inquirer.prompt(this.book.addContactQuestions).then((answers) => {
-      this.book.addContact(answers.name, answers.phone).then((contact) => {
+      this.book.addContact(answers.name, answers.phone, answers.email).then((contact) => {
         console.log("Contact added successfully!");
         this.main();
          }).catch((err) => {

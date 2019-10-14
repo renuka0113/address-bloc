@@ -12,22 +12,30 @@ module.exports = class ContactController {
          message: "Contact's name - ",
          validate(val){
            return val !== "";
-         }
-       },
+         }//validate val closed
+       },//contact name close
        {
          type: "input",
          name: "phone",
          message: "Contact's phone number - ",
          validate(val){
            return val !== "";
-         }
-       }
+         }//validate val closed
+    },//phonenumber closed
+        {
+          type: "input",
+          name:"email",
+          message:"Contac's email - ",
+          validate(val){
+            return val!=="";
+          }//validate val closed
+        }//email closed
+    ];//addContactQuestions closed
+  }//constructor closed
 
-    ];
-}
 
-addContact(name,phone){
+addContact(name,phone,email){
 //  this.contacts.push({name,phone});
-return Contact.create({name, phone})
-  }
-}
+return Contact.create({name, phone,email})
+}//addContact closed
+}//class closed
