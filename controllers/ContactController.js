@@ -38,4 +38,13 @@ addContact(name,phone,email){
 //  this.contacts.push({name,phone});
 return Contact.create({name, phone,email})
 }//addContact closed
+
+getContacts(){
+  return Contact.findAll()
+}//getContacts closed
+
+iterativeSearch(contacts, target){
+      //method definition
+    }
+
 }//class closed
