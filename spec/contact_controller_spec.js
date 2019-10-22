@@ -64,8 +64,9 @@ describe("ContactController", () => {
          });//catch error close
        });// it close
   });//getContacts close
-//#4
 
+
+//#4
 describe("#iterativeSearch()", () => {
 
      const zelda = ["Zelda Smith", "000-100-111", "zelda@nintendo.com"];
@@ -75,7 +76,45 @@ describe("#iterativeSearch()", () => {
 
      it("should return null when called with an empty array", () => {
        expect(this.book.iterativeSearch([], "Alloy")).toBeNull();
-     });//it close
+     });//it close. Here we are testing that when the iterativeSearch function is called with an empty array and any target name, not necessarily Alloy, then
+     //it must return a null.So since we are passing an empty array, it is not going to have Alloy or any other string and must return null.
+
+
+     it("should return null when contact is not found", (done) => {
+       this.book.addContact(...zelda)
+       .then(() => {
+       this.book.getContacts()
+       .then((contacts) => {
+        expect(this.book.iterativeSearch(contacts, "Alloy Rodriguez")).toBeNull();
+         done();
+       })
+      .catch((err) => {
+        console.log(err);
+      done();
+    });
+  });
+});
+
+it("should return the contact if found", (done) => {
+  this.book.addContact(...alloy)
+  .then(() => {
+    this.book.addContact(...magus)
+    .then(() => {
+      this.book.getContacts()
+      .then((contacts) => {
+        let contact = this.book.iterativeSearch(contacts, "Magus Johnson");
+        expect(contact.name).toBe("Magus Johnson");
+        expect(contact.phone).toBe("101-010-101");
+        expect(contact.email).toBe("magus@squaresoft.com");
+        done();
+      })
+      .catch((err) => {
+        console.log(err);
+        done();
+      });
+    });
+  });
+});
 
    });//iterativeSearch close
 

@@ -1,4 +1,4 @@
-const inquirer = require("inquirer");
+//const inquirer = require("inquirer");
  const Contact = require("../db/models").Contact;
 
 module.exports = class ContactController {
@@ -45,6 +45,12 @@ getContacts(){
 
 iterativeSearch(contacts, target){
       //method definition
+      for(let contact of contacts){
+        if(contact.name.toLowerCase() === target.toLowerCase()){
+          return contact;
+        }
+      }
+      return null;
     }
 
 }//class closed
