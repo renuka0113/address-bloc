@@ -1,12 +1,11 @@
 const ContactController = require("../controllers/ContactController");
 const sequelize = require("../db/models/index").sequelize;
+const zelda = ["Zelda Smith", "000-100-111", "zelda@nintendo.com"];
+const snake = ["Solid Snake", "100-100-100", "snake@konami.com"];
+const magus = ["Magus Johnson", "101-010-101", "magus@squaresoft.com"];
+const alloy = ["Alloy Rodriguez", "111-111-111", "allow@guerrilla-games.com"];
 describe("ContactController", () => {
-  const zelda = ["Zelda Smith", "000-100-111", "zelda@nintendo.com"];
-  const snake = ["Solid Snake", "100-100-100", "snake@konami.com"];
-  const magus = ["Magus Johnson", "101-010-101", "magus@squaresoft.com"];
-  const alloy = ["Alloy Rodriguez", "111-111-111", "allow@guerrilla-games.com"];
-
-   beforeEach((done)=>{
+  beforeEach((done)=>{
     this.book=new ContactController();
 
     // #1
