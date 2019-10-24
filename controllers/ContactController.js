@@ -25,7 +25,7 @@ module.exports = class ContactController {
         {
           type: "input",
           name:"email",
-          message:"Contac's email - ",
+          message:"Contact's email - ",
           validate(val){
             return val!=="";
           }//validate val closed
@@ -39,6 +39,17 @@ module.exports = class ContactController {
             }//validate val closed
           }//name of contact to search closed
        ];//addContactQuestions closed
+
+       this.searchQuestions = [
+   {
+     type: "input",
+     name: "name",
+     message: "Name of contact to search - ",
+     validate(val){
+       return val !== "";
+     }
+   }
+ ];
 
        this.showContactQuestions = [
          {
@@ -113,8 +124,8 @@ iterativeSearch(contacts, target){
        }
 
        delete(id){
-    return Contact.destroy({
-      where: {id}
+       return Contact.destroy({
+       where: {id}
     })
   }
 
