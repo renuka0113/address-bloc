@@ -168,7 +168,7 @@ describe("search methods",()=>{
 
                  });
              })
-           })//search methods close
+          })//search methods close
 
     describe("#search()", () => {
      it("should return null when a contact was not found", (done) => {
@@ -236,6 +236,7 @@ describe("search methods",()=>{
      this.book.addContact("Rick Deckard", "000-000-000", "null@null.com").then((contact) => {
        this.book.getContacts()
        .then((contacts) => {
+         console.log(contacts);
          expect(contacts[0].name).toBe("Rick Deckard");
          expect(contacts.length).toBe(1);
          this.book.delete(contact.id)
