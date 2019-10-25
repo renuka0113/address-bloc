@@ -210,7 +210,7 @@ describe("search methods",()=>{
      });//it return contact when found
    });
 
-   });// describe search
+
 
    describe("#delete()", () => {
 
