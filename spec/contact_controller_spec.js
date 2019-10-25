@@ -20,6 +20,11 @@ describe("ContactController", () => {
   }); //catch close
 }); //beforeEach close
 
+it("should be defined", () => {
+    expect(ContactController).toBeDefined();
+  });
+
+
 //#2
  describe("#addContact()",()=>{
    it("should add a single contact into the book",(done)=>{
@@ -178,13 +183,13 @@ describe("search methods",()=>{
          .then((contact) => {
            expect(contact).toBeNull();
            done();
-         })
+         })//.then contact
          .catch((err) => {
            console.log(err);
            done();
-         });
-       });
-     });
+         });//catch error
+       });//then
+     });//it should return null contact not found
 
      it("should return the contact when found", (done) => {
        this.book.addContact(...snake)
@@ -196,15 +201,16 @@ describe("search methods",()=>{
            expect(contact.phone).toBe("100-100-100");
            expect(contact.email).toBe("snake@konami.com");
            done();
-         })
+         })//.then contact
          .catch((err) => {
            console.log(err);
            done();
-         });
-       });
-     });
-
+         });//catch
+       });//.then
+     });//it return contact when found
    });
+
+   });// describe search
 
    describe("#delete()", () => {
 
@@ -245,15 +251,15 @@ describe("search methods",()=>{
            .then((contacts) => {
              expect(contacts.length).toBe(0);
              done();
-           })
+           })//.then contacts
            .catch((err) => {
              console.log(err);
              done();
-           });
-         });
-       });
-     });
+           });//catch err
+         });//.then()
+       });//.then contacts
+     });//rick deckard
 
-   });
+   });//it should remove the contact that matches ID
 
- });
+ });// #describe delete
