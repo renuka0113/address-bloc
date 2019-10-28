@@ -25,6 +25,8 @@ it("should be defined", () => {
   });
 
 
+
+
 //#2
  describe("#addContact()",()=>{
    it("should add a single contact into the book",(done)=>{
@@ -73,7 +75,7 @@ it("should be defined", () => {
          });//catch error close
        });// it close
   });//getContacts close
-
+});//newly added parentheses; ContactController suite close
 
 //#4
 describe("search methods",()=>{
@@ -164,8 +166,7 @@ describe("search methods",()=>{
                              .catch((err) => {
                                console.log(err);
                                done();
-                             });
-                           });
+
                          });
                        });
                      });
@@ -191,6 +192,7 @@ describe("search methods",()=>{
        });//then
      });//it should return null contact not found
 
+
      it("should return the contact when found", (done) => {
        this.book.addContact(...snake)
        .then(() => {
@@ -208,7 +210,7 @@ describe("search methods",()=>{
          });//catch
        });//.then
      });//it return contact when found
-   });
+   });//search close
 
 
 
@@ -258,8 +260,10 @@ describe("search methods",()=>{
            });//catch err
          });//.then()
        });//.then contacts
-     });//rick deckard
+     })//rick deckard
 
    });//it should remove the contact that matches ID
 
  });// #describe delete
+
+});//#search methods suite close; newly added parentheses
