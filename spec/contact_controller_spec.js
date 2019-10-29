@@ -1,9 +1,9 @@
 const ContactController = require("../controllers/ContactController");
-const sequelize = require("../db/models/index").sequelize;
+/*const sequelize = require("../db/models/index").sequelize;
 const zelda = ["Zelda Smith", "000-100-111", "zelda@nintendo.com"];
 const snake = ["Solid Snake", "100-100-100", "snake@konami.com"];
 const magus = ["Magus Johnson", "101-010-101", "magus@squaresoft.com"];
-const alloy = ["Alloy Rodriguez", "111-111-111", "allow@guerrilla-games.com"];
+const alloy = ["Alloy Rodriguez", "111-111-111", "allow@guerrilla-games.com"];*/
 
 describe("ContactController", () => {
   beforeEach((done)=>{
@@ -79,10 +79,10 @@ it("should be defined", () => {
 
 //#4
 describe("search methods",()=>{
-  /*const zelda = ["Zelda Smith", "000-100-111", "zelda@nintendo.com"];
+  const zelda = ["Zelda Smith", "000-100-111", "zelda@nintendo.com"];
   const snake = ["Solid Snake", "100-100-100", "snake@konami.com"];
   const magus = ["Magus Johnson", "101-010-101", "magus@squaresoft.com"];
-  const alloy = ["Alloy Rodriguez", "111-111-111", "allow@guerrilla-games.com"];*/
+  const alloy = ["Alloy Rodriguez", "111-111-111", "allow@guerrilla-games.com"];
 
       describe("#iterativeSearch()", () => {
         it("should return null when called with an empty array", () => {
