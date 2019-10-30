@@ -75,7 +75,7 @@ it("should be defined", () => {
          });//catch error close
        });// it close
   });//getContacts close
-});//newly added parentheses; ContactController suite close
+//});//newly added parentheses; ContactController suite close
 
 //#4
 describe("search methods",()=>{
@@ -268,3 +268,5 @@ describe("search methods",()=>{
  });// #describe delete
 
 });//#search methods suite close; newly added parentheses
+
+});//ContactController suite is closed here.The parentheses on line 78 should stay commented, those parentheses are closing here.This is done so that the beforeEach is available for every spec in contact_controller_spec.
