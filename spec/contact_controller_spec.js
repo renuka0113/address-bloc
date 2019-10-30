@@ -139,9 +139,10 @@ describe("search methods",()=>{
 
          it("should return null when contact is not found", (done) => {
               this.book.addContact(...zelda)
-              .then(() => {
-                this.book.getContacts()
+              .then (async() => {
+                await this.book.getContacts()
                 .then((contacts) => {
+                  //console.log(contacts);
                   expect(this.book.binarySearch(sort(contacts), "Alloy Rodriguez")).toBeNull();
                   done();
                 })
