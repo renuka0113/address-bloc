@@ -14,11 +14,10 @@ describe("ContactController", () => {
     sequelize.sync({force:true}).then((res)=>{
       done();
     }) //sequelize close
-
-.catch((err)=>{
-  done();
-  }); //catch close
-}); //beforeEach close
+    .catch((err)=>{
+      done();
+    }); //catch close
+ }); //beforeEach close
 
 it("should be defined", () => {
     expect(ContactController).toBeDefined();
